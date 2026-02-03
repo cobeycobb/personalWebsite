@@ -59,20 +59,7 @@ const renderGallery = (photos) => {
     img.src = encodeURI(photo.file);
     img.alt = `${photo.title} - ${photo.location}`;
     img.loading = 'lazy';
-
-    const caption = document.createElement('div');
-    caption.className = 'caption';
-
-    const title = document.createElement('strong');
-    title.textContent = photo.title;
-
-    const location = document.createElement('span');
-    location.textContent = photo.location;
-
-    caption.appendChild(title);
-    caption.appendChild(location);
     card.appendChild(img);
-    card.appendChild(caption);
     galleryEl.appendChild(card);
   });
 };
