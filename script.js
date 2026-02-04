@@ -4,6 +4,7 @@ const activeLabelEl = document.getElementById('activeLabel');
 const countEl = document.getElementById('photoCount');
 const lightboxEl = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
 const lightboxClose = document.getElementById('lightboxClose');
 const lightboxPrev = document.getElementById('lightboxPrev');
 const lightboxNext = document.getElementById('lightboxNext');
@@ -133,7 +134,9 @@ const render = () => {
   activeLabelEl.textContent = state.activeLocation === 'All'
     ? 'All Photos'
     : state.activeLocation;
-  countEl.textContent = `${filtered.length} photo${filtered.length === 1 ? '' : 's'}`;
+  if (countEl) {
+    countEl.textContent = `${filtered.length} photo${filtered.length === 1 ? '' : 's'}`;
+  }
 
   const locations = buildLocations(state.photos);
   renderLocations(locations);
@@ -170,12 +173,14 @@ const updateLightbox = () => {
   }
   lightboxImg.src = encodeURI(photo.file);
   lightboxImg.alt = `${photo.title} - ${photo.location}`;
+  lightboxCaption.textContent = photo.location;
 };
 
 const closeLightbox = () => {
   lightboxEl.classList.remove('open');
   lightboxEl.setAttribute('aria-hidden', 'true');
   lightboxImg.src = '';
+  lightboxCaption.textContent = '';
 };
 
 const showPrev = () => {
