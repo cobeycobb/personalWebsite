@@ -148,6 +148,7 @@ body {
   height: 220px;
   object-fit: cover;
   display: block;
+  cursor: zoom-in;
 }
 
 
@@ -176,4 +177,47 @@ body {
   .card img {
     height: 190px;
   }
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 8, 10, 0.92);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox img {
+  max-width: min(1200px, 92vw);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
 }

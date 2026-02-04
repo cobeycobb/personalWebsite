@@ -2,6 +2,9 @@ const galleryEl = document.getElementById('gallery');
 const locationsEl = document.getElementById('locations');
 const activeLabelEl = document.getElementById('activeLabel');
 const countEl = document.getElementById('photoCount');
+const lightboxEl = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
 
 const state = {
   photos: [],
@@ -59,6 +62,7 @@ const renderGallery = (photos) => {
     img.src = encodeURI(photo.file);
     img.alt = `${photo.title} - ${photo.location}`;
     img.loading = 'lazy';
+    img.addEventListener('click', () => openLightbox(photo));
     card.appendChild(img);
     galleryEl.appendChild(card);
   });
@@ -93,5 +97,31 @@ const init = async () => {
     console.error(error);
   }
 };
+
+const openLightbox = (photo) => {
+  lightboxImg.src = encodeURI(photo.file);
+  lightboxImg.alt = `${photo.title} - ${photo.location}`;
+  lightboxEl.classList.add('open');
+  lightboxEl.setAttribute('aria-hidden', 'false');
+};
+
+const closeLightbox = () => {
+  lightboxEl.classList.remove('open');
+  lightboxEl.setAttribute('aria-hidden', 'true');
+  lightboxImg.src = '';
+};
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxEl.addEventListener('click', (event) => {
+  if (event.target === lightboxEl) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && lightboxEl.classList.contains('open')) {
+    closeLightbox();
+  }
+});
 
 init();
