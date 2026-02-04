@@ -176,12 +176,12 @@
   },
   {
     "file": "photos_web/Humboldt - Fairy Lights.jpg",
-    "location": "Humboldt",
+    "location": "Redwood Forest",
     "title": "Fairy Lights"
   },
   {
     "file": "photos_web/Humboldt - Redwood road 2-1.jpg",
-    "location": "Humboldt",
+    "location": "Redwood Forest",
     "title": "Redwood road 2-1"
   },
   {
@@ -230,11 +230,6 @@
     "title": "orion final"
   },
   {
-    "file": "photos_web/Labryinth Spiral - Lightning Spiral.jpg",
-    "location": "Labryinth Spiral",
-    "title": "Lightning Spiral"
-  },
-  {
     "file": "photos_web/Lake Powell - Toadstool Hoodoos 2.jpg",
     "location": "Lake Powell",
     "title": "Toadstool Hoodoos 2"
@@ -261,7 +256,7 @@
   },
   {
     "file": "photos_web/Northern California Fern Canyon.jpg",
-    "location": "Other",
+    "location": "Fern Valley - NorCal",
     "title": "Northern California Fern Canyon"
   },
   {
@@ -353,5 +348,20 @@
     "file": "photos_web/Yosemite - wide angle mountain pano.jpg",
     "location": "Yosemite",
     "title": "wide angle mountain pano"
+  },
+  {
+    "file": "photos_web/valley of dreams 1.jpg",
+    "location": "Valley of Dreams",
+    "title": "valley of dreams 1"
+  },
+  {
+    "file": "photos_web/valley of dreams 3.jpg",
+    "location": "Valley of Dreams",
+    "title": "valley of dreams 3"
+  },
+  {
+    "file": "photos_web/valley of dreams.jpg",
+    "location": "Valley of Dreams",
+    "title": "valley of dreams"
   }
 ]

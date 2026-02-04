@@ -22,6 +22,11 @@
 
       <main class="main">
         <div class="toolbar">
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div class="active-label" id="activeLabel">All Photos</div>
           <div class="count" id="photoCount"></div>
         </div>
@@ -29,8 +34,11 @@
       </main>
     </div>
 
+    <div id="sidebarBackdrop" class="sidebar-backdrop" aria-hidden="true"></div>
     <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous photo">Prev</button>
       <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close photo">Close</button>
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next photo">Next</button>
       <img id="lightboxImg" alt="" />
     </div>
 
